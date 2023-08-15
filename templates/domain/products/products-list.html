@@ -1,0 +1,5 @@
+{{ range $key, $product := .products }}
+    {{ template "product" $product }}
+{{ else }}
+    <span>Нет данных!</span>
+{{ end }}
