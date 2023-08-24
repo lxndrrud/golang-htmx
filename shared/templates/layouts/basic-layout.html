@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/htmx.org@1.9.4"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Продуктовый магазин</title>
+</head>
+<body>
+    <div class="w-full flex flex-col">
+        <div class="px-5 py-3 border-2 rounded flex">
+            <span class="p-2 border-2">Продуктовый магазин <a href="/products/" class="text-red-500">&quot;У Рудя&quot;</a></span>
+            {{ template "auth-header" }}
+        </div>
+        <div class="px-2 py-3 flex flex-col items-center">
+            {{ template "body" }} 
+        </div>
+    </div>
+</body>
+</html>

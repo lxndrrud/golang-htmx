@@ -1,0 +1,19 @@
+{{ define "body" }}
+    <div>
+        <form action="/auth/login" method="post" class="p-2 w-[500px] flex flex-col">
+            <div class="p-2 my-2">
+                <input type="text" name="login" id="login" placeholder="Логин" 
+                    class="w-full p-2 border-[1px] border-slate-500 rounded"
+                    required />
+            </div>
+            <div class="p-2 my-2">
+                <input type="password" name="password" id="password" placeholder="Пароль" 
+                    class="w-full p-2 border-[1px] border-slate-500 rounded"
+                    required />
+            </div>
+            <div class="p-2 my-2">
+                <input type="submit" value="Войти" class="p-2 w-full bg-slate-500 text-white rounded" />
+            </div>
+        </form>
+    </div>
+{{ end }}

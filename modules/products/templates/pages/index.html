@@ -1,0 +1,11 @@
+{{ define "body" }}
+    <div class="mt-2 flex flex-col">
+        <button 
+            hx-get="/products/getAll" hx-target="#products-container"
+            class="p-2 bg-slate-500 text-white rounded"
+        >
+            Получить продукты
+        </button>
+        <div id="products-container" ></div>
+    </div>
+{{ end }}

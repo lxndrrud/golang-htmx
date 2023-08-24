@@ -1,0 +1,8 @@
+{{ define "auth-header" }}
+    {{ if .UserLogin }}
+        <span>Привет, {{ .UserLogin }}!</span>
+        <input type="submit" hx-post="/auth/logout" value="Выйти" />
+    {{ else }}
+        <a href="/auth/login" class="mx-2 px-2 py-3 text-blue-500">Войти</a>
+    {{ end }}
+{{ end }}
