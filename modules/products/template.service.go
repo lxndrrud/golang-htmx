@@ -12,20 +12,16 @@ func newProductsTemplateService() *productsTemplateService {
 }
 
 func (pts productsTemplateService) IndexPageTemplate() (*template.Template, error) {
-	baseTemplate, err := template.ParseFiles(
+	template, err := template.ParseFiles(
 		"shared/templates/layouts/basic-layout.html",
-		"shared/templates/auth/auth-header.html")
-	clone, err := baseTemplate.Clone()
+		"shared/templates/auth/auth-header.html",
+		"modules/products/templates/pages/index.html",
+	)
 	if err != nil {
 		err = fmt.Errorf("ProductsTemplateService - IndexPageTemplate: %v", err.Error())
-		return baseTemplate, err
+		return template, err
 	}
-	indexTemplate, err := clone.ParseFiles("modules/products/templates/pages/index.html")
-	if err != nil {
-		err = fmt.Errorf("ProductsTemplateService - IndexPageTemplate: %v", err.Error())
-		return baseTemplate, err
-	}
-	return indexTemplate, err
+	return template, nil
 }
 
 func (pts productsTemplateService) GetAllProducts() (*template.Template, error) {
@@ -37,5 +33,5 @@ func (pts productsTemplateService) GetAllProducts() (*template.Template, error) 
 		err = fmt.Errorf("ProductsTemplateService - GetAllProducts: %v", err.Error())
 		return template, err
 	}
-	return template, err
+	return template, nil
 }

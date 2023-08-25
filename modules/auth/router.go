@@ -14,4 +14,5 @@ func AuthRouterBootstrap(subrouter *mux.Router, connection *sqlx.DB) {
 
 	subrouter.HandleFunc("/login", controller.LoginPage).Methods("GET")
 	subrouter.HandleFunc("/login", controller.LoginAction).Methods("POST")
+	subrouter.HandleFunc("/logout", controller.LogoutAction).Methods("POST")
 }

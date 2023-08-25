@@ -48,5 +48,6 @@ func main() {
 	authSubrouter := router.PathPrefix("/auth").Subrouter()
 	auth.AuthRouterBootstrap(authSubrouter, connection)
 
+	router.PathPrefix("/static/").Handler(http.StripPrefix("/static/", http.FileServer(http.Dir("./shared/scripts/"))))
 	http.ListenAndServe(":9000", router)
 }

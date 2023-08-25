@@ -24,7 +24,9 @@ func (pc productsController) IndexPage(w http.ResponseWriter, r *http.Request) {
 	}
 	if errCookie == nil {
 		err = template.Execute(w, map[string]any{
-			"UserLogin": login.Value,
+			"user": struct{ Login string }{
+				Login: login.Value,
+			},
 		})
 		if err != nil {
 			log.Println(err)
@@ -41,7 +43,6 @@ func (pc productsController) IndexPage(w http.ResponseWriter, r *http.Request) {
 			return
 		}
 	}
-
 }
 
 func (pc productsController) GetAllProducts(w http.ResponseWriter, r *http.Request) {

@@ -22,13 +22,3 @@ func (ats authTemplateService) LoginPageTemplate() (*template.Template, error) {
 	}
 	return template, err
 }
-
-func (ats authTemplateService) LoginActionChangeHeader() (*template.Template, error) {
-	template, err := template.ParseFiles(
-		"shared/templates/auth/auth-header.html")
-	if err != nil {
-		err = fmt.Errorf("ProductsTemplateService - IndexPageTemplate: %v", err.Error())
-		return template, err
-	}
-	return template, err
-}
